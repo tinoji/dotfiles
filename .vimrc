@@ -1,3 +1,21 @@
+" 移動
+inoremap <silent> jj <ESC>
+inoremap <silent> っj <ESC>
+noremap <C-a> 0
+noremap <C-e> $
+noremap <C-p> <Up>
+noremap <C-n> <Down>
+noremap <C-f> <Right>
+noremap <C-b> <Left>
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
+inoremap <C-p> <Up>
+inoremap <C-n> <Down>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+
+
+
 " setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
@@ -43,9 +61,9 @@ set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=2
+set tabstop=4
 " 行頭でのTab文字の表示幅
-set shiftwidth=2
+set shiftwidth=4
 
 
 " 検索系
