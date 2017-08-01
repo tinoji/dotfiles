@@ -3,18 +3,20 @@ inoremap <silent> jj <ESC>
 inoremap <silent> っj <ESC>
 noremap <C-a> 0
 noremap <C-e> $
-noremap <C-p> <Up>
-noremap <C-n> <Down>
-noremap <C-f> <Right>
-noremap <C-b> <Left>
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
-inoremap <C-p> <Up>
-inoremap <C-n> <Down>
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
+inoremap <C-k> <Up>
+inoremap <C-j> <Down>
+inoremap <C-l> <Right>
+inoremap <C-h> <Left>
 
-
+" 日本語入力がオンのままでも使えるコマンド(Enterキーは必要)
+nnoremap あ a
+nnoremap い i
+nnoremap う u
+nnoremap お o
+nnoremap っd dd
+nnoremap っy yy
 
 " setting
 "文字コードをUFT-8に設定
@@ -53,7 +55,8 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-
+" 折り返しマーク
+set showbreak=↪
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
