@@ -1,3 +1,23 @@
+" 移動
+inoremap <silent> jj <ESC>
+inoremap <silent> っj <ESC>
+noremap <C-a> 0
+noremap <C-e> $
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
+inoremap <C-k> <Up>
+inoremap <C-j> <Down>
+inoremap <C-l> <Right>
+inoremap <C-h> <Left>
+
+" 日本語入力がオンのままでも使えるコマンド(Enterキーは必要)
+nnoremap あ a
+nnoremap い i
+nnoremap う u
+nnoremap お o
+nnoremap っd dd
+nnoremap っy yy
+
 " setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
@@ -35,7 +55,8 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-
+" 折り返しマーク
+set showbreak=↪
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
@@ -43,9 +64,9 @@ set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=2
+set tabstop=4
 " 行頭でのTab文字の表示幅
-set shiftwidth=2
+set shiftwidth=4
 
 
 " 検索系
@@ -62,3 +83,12 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" 矢印キーを無効にする
+"noremap <Up> <Nop>
+"noremap <Down> <Nop>
+"noremap <Left> <Nop>
+"noremap <Right> <Nop>
+"inoremap <Up> <Nop>
+"inoremap <Down> <Nop>
+"inoremap <Left> <Nop>
+"inoremap <Right> <Nop>

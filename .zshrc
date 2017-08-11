@@ -30,7 +30,7 @@ SAVEHIST=1000000
 # 同時に起動したzshの間でヒストリを共有する
 setopt share_history
 
-#peco multi-line
+# pecoの設定
 function peco-history-selection() {
       BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
           CURSOR=$#BUFFER
