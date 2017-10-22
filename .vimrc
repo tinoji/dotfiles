@@ -5,11 +5,10 @@ noremap <C-a> 0
 noremap <C-e> $
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
-noremap <C-k> <Up>
+inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-l> <Right>
 inoremap <C-h> <Left>
-
 
 " 日本語入力がオンのままでも使えるコマンド(Enterキーは必要)
 nnoremap あ a
@@ -20,7 +19,6 @@ nnoremap っd dd
 nnoremap っy yy
 
 
-" setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
@@ -88,6 +86,7 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+
 " 矢印キーを無効にする
 "noremap <Up> <Nop>
 "noremap <Down> <Nop>
@@ -97,3 +96,4 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "inoremap <Down> <Nop>
 "inoremap <Left> <Nop>
 "inoremap <Right> <Nop>
+
