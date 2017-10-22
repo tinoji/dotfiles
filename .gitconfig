@@ -18,22 +18,22 @@
     difff = diff --word-diff
 
     # カレントブランチをpushする
-    p = !git push origin `git rev-parse --abbrev-ref HEAD`
+    pushthis = !git push origin `git rev-parse --abbrev-ref HEAD`
 
 [core]
     excludesfile = /Users/kikuchi-hiroaki/.gitignore_global
 
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path = 
 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 
 [user]
-	name = tinoji
-	email = pot5.sunen.on.the.earth.614@gmail.com
+    name = tinoji
+    email = pot5.sunen.on.the.earth.614@gmail.com
     
 [commit]
     template = /Users/kikuchi-hiroaki/.stCommitMsg
