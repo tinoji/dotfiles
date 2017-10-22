@@ -32,8 +32,8 @@
 	trustExitCode = true
 
 [user]
-    name = kikuchi-hiroaki
-    email =
+	name = tinoji
+	email = pot5.sunen.on.the.earth.614@gmail.com
     
 [commit]
     template = /Users/kikuchi-hiroaki/.stCommitMsg
