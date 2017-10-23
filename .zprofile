@@ -14,7 +14,6 @@ eval "$(pyenv init -)"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 
-
-# prompt
+#prompt
 PROMPT='%F{cyan}[%d]
 $%f '

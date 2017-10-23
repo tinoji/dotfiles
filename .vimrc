@@ -18,7 +18,7 @@ nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
 
-" setting
+
 "文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
@@ -31,6 +31,8 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
+" 矩形選択で行末を超えてブロックを選択できるようにする
+set virtualedit+=block
 
 
 " 見た目系
@@ -41,7 +43,7 @@ set cursorline
 " 現在の行を強調表示（縦）
 "set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
-set virtualedit=onemore
+set virtualedit+=onemore
 " インデントはスマートインデント
 set smartindent
 " ビープ音を可視化
@@ -92,3 +94,4 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "inoremap <Down> <Nop>
 "inoremap <Left> <Nop>
 "inoremap <Right> <Nop>
+
