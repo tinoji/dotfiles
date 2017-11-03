@@ -60,7 +60,6 @@ nnoremap k gk
 " 折り返しマーク
 set showbreak=↪
 
-
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
 set list listchars=tab:\▸\-
@@ -85,7 +84,6 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-
 
 " 矢印キーを無効にする
 "noremap <Up> <Nop>
