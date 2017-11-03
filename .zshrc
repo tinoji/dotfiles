@@ -2,7 +2,7 @@
 alias u='cd ..'
 alias st='open -a /Applications/Sublime\ Text.app'
 alias ls='ls -G'
-alias ll='ls -laG'
+alias ll='ls -laGh'
 alias grep='grep --color'
 alias sed=gsed
 alias df='df -h'
