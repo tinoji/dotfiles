@@ -121,6 +121,7 @@ call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
 " Pluginをここに追加していく
 call dein#add('scrooloose/nerdtree')
+call dein#add('tomtom/tcomment_vim')
 
 call dein#end()
 
@@ -135,7 +136,10 @@ filetype plugin indent on
 "======================
 " Settings for plugin
 "======================
-""" NERDTree
+""" NERDTree: ディレクトリツリーの表示
 nnoremap <silent><C-t> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
+
+"" tcomment: 複数行コメント
+"設定なし。Shift+vで選択 => Control+ハイフン2回 でおk
 
