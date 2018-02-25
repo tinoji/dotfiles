@@ -116,22 +116,26 @@ endif
 
 " インストール
 call dein#begin(s:dein_dir)
-
 call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
 " Pluginをここに追加していく
 call dein#add('scrooloose/nerdtree')
 
-
 call dein#end()
+
+" 不足プラグインの自動インストール
+if has('vim_starting') && dein#check_install()
+  call dein#install()
+endif
+
 filetype plugin indent on
 
 
 "======================
 " Settings for plugin
 "======================
-" NERDTree
+""" NERDTree
 nnoremap <silent><C-t> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
 
