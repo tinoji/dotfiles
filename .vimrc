@@ -18,7 +18,7 @@ nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
 
-"文字コードをUFT-8に設定
+" 文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
 set nobackup
@@ -34,6 +34,14 @@ set showcmd
 set virtualedit+=block
 
 " 見た目系
+" 背景色はターミナルのものを維持
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
+" シンタックスハイライト
+syntax enable
+"カラースキーム TODO: 熟考せよ 
+colorscheme slate
+
 " 行番号を表示
 set number
 " 現在の行を強調表示
@@ -122,6 +130,7 @@ call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 " Pluginをここに追加していく
 call dein#add('scrooloose/nerdtree')
 call dein#add('tomtom/tcomment_vim')
+call dein#add('altercation/vim-colors-solarized')
 
 call dein#end()
 
