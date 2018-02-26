@@ -18,7 +18,6 @@ nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
 
-
 "文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
@@ -33,7 +32,6 @@ set hidden
 set showcmd
 " 矩形選択で行末を超えてブロックを選択できるようにする
 set virtualedit+=block
-
 
 " 見た目系
 " 行番号を表示
@@ -70,7 +68,6 @@ set tabstop=4
 " 行頭でのTab文字の表示幅
 set shiftwidth=4
 
-
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
@@ -94,4 +91,55 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "inoremap <Down> <Nop>
 "inoremap <Left> <Nop>
 "inoremap <Right> <Nop>
+
+
+"==============================================================
+" Plugins by dein.vim
+" 
+" See: https://github.com/Shougo/dein.vim
+"      https://qiita.com/jnchito/items/5141b3b01bced9f7f48f
+"      https://qiita.com/delphinus/items/00ff2c0ba972c6e41542
+"        (プラグイン増えてきたらこんな感じにするかも)
+"==============================================================
+" インストールディレクトリ
+let s:dein_dir = expand('~/.vim/dein')
+" dein.vim 本体
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+" dein.vim がなければ落としてくる
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
+
+" インストール
+call dein#begin(s:dein_dir)
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+
+" Pluginをここに追加していく
+call dein#add('scrooloose/nerdtree')
+call dein#add('tomtom/tcomment_vim')
+
+call dein#end()
+
+" 不足プラグインの自動インストール
+if has('vim_starting') && dein#check_install()
+  call dein#install()
+endif
+
+filetype plugin indent on
+
+
+"======================
+" Settings for plugin
+"======================
+""" NERDTree: ディレクトリツリーの表示
+nnoremap <silent><C-t> :NERDTreeToggle<CR>
+let NERDTreeShowHidden = 1
+
+"" tcomment: 複数行コメント
+"設定なし。Shift+vで選択 => Control+ハイフン2回 でおk
 

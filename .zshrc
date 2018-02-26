@@ -1,6 +1,5 @@
-#alias
+# alias
 alias u='cd ..'
-alias st='open -a /Applications/Sublime\ Text.app'
 alias ls='ls -G'
 alias ll='ls -laGh'
 alias grep='grep --color'
@@ -8,13 +7,10 @@ alias sed=gsed
 alias df='df -h'
 alias sudo='sudo '
 alias source='source '
-alias activate=/Users/hkikuchi/.pyenv/versions/anaconda3-4.0.0/bin/activate
+alias activate=~/.pyenv/versions/anaconda3-4.0.0/bin/activate
 alias jnote='jupyter notebook &'
-alias startpg='pg_ctl -l /usr/local/var/postgres/server.log start'
-alias stoppg='pg_ctl stop'
 alias rm=rmtrash
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
-
 
 # ls command colors
 export LSCOLORS=cxfxcxdxbxegedabagacad
