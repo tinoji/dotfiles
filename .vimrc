@@ -101,6 +101,32 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "inoremap <Right> <Nop>
 
 
+""""""""""""""""""""""""""
+" インデント
+""""""""""""""""""""""""""
+" Tab文字を半角スペースにする
+set expandtab
+" 行頭以外のTab文字の表示幅（スペースいくつ分）
+set tabstop=4
+" 行頭でのTab文字の表示幅
+set shiftwidth=4
+"いくつの連続した空白を1回で削除できるようにするか
+set softtabstop=4
+"改行した時に自動でインデント
+set autoindent
+"{があると次の行は自動で1段深く自動インデント
+set smartindent
+
+"拡張子ごとの設定
+augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+    autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.yml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
+
+
 "==============================================================
 " Plugins by dein.vim
 " 
