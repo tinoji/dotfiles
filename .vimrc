@@ -66,16 +66,6 @@ nnoremap k gk
 " 折り返しマーク
 set showbreak=↪
 
-" Tab系
-" 不可視文字を可視化(タブが「▸-」と表示される)
-set list listchars=tab:\▸\-
-" Tab文字を半角スペースにする
-set expandtab
-" 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=4
-" 行頭でのTab文字の表示幅
-set shiftwidth=4
-
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
@@ -105,6 +95,8 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " インデント
 " See: https://qiita.com/mitsuru793/items/2d464f30bd091f5d0fef
 "===============================================================
+" 不可視文字を可視化(タブが「▸-」と表示される)
+set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
@@ -125,6 +117,7 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.yml setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.go setlocal noexpandtab list&
 augroup END
 
 
