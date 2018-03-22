@@ -18,6 +18,8 @@ nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
 
+" バックスペースが効かなくなるのを防止
+set backspace=indent,eol,start
 " 文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
@@ -45,7 +47,7 @@ colorscheme slate
 " 行番号を表示
 set number
 " 現在の行を強調表示
-set cursorline
+"set cursorline
 " 現在の行を強調表示（縦）
 "set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
@@ -181,6 +183,7 @@ call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 call dein#add('scrooloose/nerdtree')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('altercation/vim-colors-solarized')
+call dein#add('fatih/vim-go')
 
 call dein#end()
 
