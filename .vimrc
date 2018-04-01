@@ -184,6 +184,7 @@ call dein#add('scrooloose/nerdtree')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('fatih/vim-go')
+call dein#add('vim-scripts/vim-auto-save')
 
 call dein#end()
 
@@ -207,9 +208,13 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 """ tcomment: 複数行コメント
-"設定なし。Shift+vで選択 => Control+ハイフン2回 でおk
+"設定なし。Control+vで選択 => Control+ハイフン2回 でおk
 
 """ vim-go
 " バージョンに関するwarningを表示しない
 let g:go_version_warning = 0
+
+""" vim-auto-save
+" 有効にする
+let g:auto_save = 1
 
