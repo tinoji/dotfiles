@@ -34,6 +34,11 @@ set hidden
 set showcmd
 " 矩形選択で行末を超えてブロックを選択できるようにする
 set virtualedit+=block
+" コマンドモードの補完が見やすいように
+set wildmenu
+set wildmode=list:longest,full
+" コマンドモードの履歴
+set history=5000
 
 " 見た目系
 " 空行の~の色を変えてなるべく目立たないように
@@ -51,7 +56,7 @@ colorscheme slate
 " 行番号を表示
 set number
 " 現在の行を強調表示
-"set cursorline
+set cursorline
 " 現在の行を強調表示（縦）
 "set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
@@ -189,6 +194,7 @@ call dein#add('tomtom/tcomment_vim')
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('fatih/vim-go')
 call dein#add('vim-scripts/vim-auto-save')
+call dein#add('ConradIrwin/vim-bracketed-paste')
 
 call dein#end()
 
