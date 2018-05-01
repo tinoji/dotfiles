@@ -36,12 +36,16 @@ set showcmd
 set virtualedit+=block
 
 " 見た目系
+" 空行の~の色を変えてなるべく目立たないように
+autocmd ColorScheme * highlight EndOfBuffer ctermfg=17 guifg=17
 " 背景色はターミナルのものを維持
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
 " シンタックスハイライト
 syntax enable
-"カラースキーム TODO: 熟考せよ 
+" 境界
+set fillchars=vert:\ ,stl:\ ,stlnc:\ ,fold:-,diff:┄
+" カラースキーム TODO: 熟考せよ 
 colorscheme slate
 
 " 行番号を表示
