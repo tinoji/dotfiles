@@ -50,7 +50,7 @@ autocmd ColorScheme * highlight LineNr ctermbg=none
 syntax enable
 " 境界
 set fillchars=vert:\ ,stl:\ ,stlnc:\ ,fold:-,diff:┄
-" カラースキーム TODO: 熟考せよ 
+" カラースキーム TODO: 熟考せよ
 colorscheme slate
 
 " 行番号を表示
@@ -196,6 +196,7 @@ call dein#add('fatih/vim-go')
 call dein#add('vim-scripts/vim-auto-save')
 call dein#add('ConradIrwin/vim-bracketed-paste')
 call dein#add('itchyny/lightline.vim')
+call dein#add('bronson/vim-trailing-whitespace')
 
 call dein#end()
 
