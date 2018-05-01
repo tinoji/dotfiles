@@ -197,6 +197,7 @@ call dein#add('vim-scripts/vim-auto-save')
 call dein#add('ConradIrwin/vim-bracketed-paste')
 call dein#add('itchyny/lightline.vim')
 call dein#add('bronson/vim-trailing-whitespace')
+call dein#add('Yggdroot/indentLine')
 
 call dein#end()
 
@@ -234,4 +235,7 @@ let g:auto_save = 1
 let g:lightline = {
     \ 'colorscheme': 'wombat'
     \ }
+
+""" indentLine
+set list listchars=tab:\¦\ 
 
