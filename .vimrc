@@ -195,6 +195,7 @@ call dein#add('altercation/vim-colors-solarized')
 call dein#add('fatih/vim-go')
 call dein#add('vim-scripts/vim-auto-save')
 call dein#add('ConradIrwin/vim-bracketed-paste')
+call dein#add('itchyny/lightline.vim')
 
 call dein#end()
 
@@ -227,4 +228,9 @@ let g:go_version_warning = 0
 """ vim-auto-save
 " 有効にする
 let g:auto_save = 1
+
+""" lightline
+let g:lightline = {
+    \ 'colorscheme': 'wombat'
+    \ }
 
