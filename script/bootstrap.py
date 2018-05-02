@@ -52,7 +52,7 @@ def all():
     git()
 
 if len(args) < 2:
-    print('Argument needed')
+    print('Argument is needed')
 elif args[1] in {'zsh', 'vim', 'tmux', 'git', 'all'}:
     eval(args[1])()
 else:
