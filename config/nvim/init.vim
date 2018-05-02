@@ -161,7 +161,6 @@ nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 
-
 "==============================================================
 " Plugins by dein.vim
 " 
@@ -217,8 +216,8 @@ nnoremap <silent><C-t> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
 
 "自動でNERDTreeを開く(ファイル名指定時は開かない)
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 """ tcomment: 複数行コメント
 "設定なし。Control+vで選択 => Control+ハイフン2回 でおk

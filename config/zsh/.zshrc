@@ -7,8 +7,6 @@ alias sed=gsed
 alias df='df -h'
 alias sudo='sudo '
 alias source='source '
-alias activate=~/.pyenv/versions/anaconda3-4.0.0/bin/activate
-alias jnote='jupyter notebook &'
 alias rm=rmtrash
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 
