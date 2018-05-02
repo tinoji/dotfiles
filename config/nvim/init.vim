@@ -36,6 +36,11 @@ call dein#add('bronson/vim-trailing-whitespace')
 call dein#add('Yggdroot/indentLine')
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('Shougo/neco-syntax')
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
+
 call dein#end()
 
 " 不足プラグインの自動インストール
@@ -77,14 +82,13 @@ let g:lightline = {
 set list listchars=tab:\¦\ 
 
 """ deoplete: コード補完
-if !has('nvim')
-  call dein#add('roxma/nvim-yarp')
-  call dein#add('roxma/vim-hug-neovim-rpc')
-endif
 let g:deoplete#enable_at_startup = 1
-" color
 autocmd ColorScheme * highlight Pmenu ctermbg=245 ctermfg=235
 autocmd ColorScheme * highlight PmenuSel ctermbg=237 ctermfg=245
+call deoplete#custom#option({
+    \ 'auto_complete_delay': 300,
+    \ 'smart_case': v:true,
+    \ })
 
 
 "==========
