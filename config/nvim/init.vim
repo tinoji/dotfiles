@@ -34,7 +34,8 @@ call dein#add('ConradIrwin/vim-bracketed-paste')
 call dein#add('itchyny/lightline.vim')
 call dein#add('bronson/vim-trailing-whitespace')
 call dein#add('Yggdroot/indentLine')
-
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('Shougo/neco-syntax')
 call dein#end()
 
 " 不足プラグインの自動インストール
@@ -51,10 +52,10 @@ filetype plugin indent on
 """ NERDTree: ディレクトリツリーの表示
 nnoremap <silent><C-t> :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
-
-"自動でNERDTreeを開く(ファイル名指定時は開かない)
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" 自動でNERDTreeを開く
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 """ tcomment: 複数行コメント
 "設定なし。Control+vで選択 => Control+ハイフン2回 でおk
@@ -67,13 +68,23 @@ let g:go_version_warning = 0
 " 有効にする
 let g:auto_save = 1
 
-""" lightline
+""" lightline: footer menu bar
 let g:lightline = {
     \ 'colorscheme': 'wombat'
     \ }
 
 """ indentLine
 set list listchars=tab:\¦\ 
+
+""" deoplete: コード補完
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
+let g:deoplete#enable_at_startup = 1
+" color
+autocmd ColorScheme * highlight Pmenu ctermbg=245 ctermfg=235
+autocmd ColorScheme * highlight PmenuSel ctermbg=237 ctermfg=245
 
 
 "==========

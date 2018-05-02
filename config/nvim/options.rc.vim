@@ -26,6 +26,8 @@ autocmd ColorScheme * highlight EndOfBuffer ctermfg=17 guifg=17
 " 背景色はターミナルのものを維持
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
+
+
 " シンタックスハイライト
 syntax enable
 " 境界
