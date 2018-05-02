@@ -5,6 +5,9 @@
 #========================================================================
 
 import os
+import sys
+
+args = sys.argv
 
 def zsh():
     print('>>> zsh')
@@ -42,8 +45,16 @@ def git():
     os.system('ln -sf  ~/dotfiles/config/git/.gitconfig ~/.gitconfig')
     print('<<< [ok] git')
 
-if '__main__' == __name__:
+def all():
     zsh()
     vim()
     tmux()
     git()
+
+if len(args) < 2:
+    print('Argument needed')
+elif args[1] in {'zsh', 'vim', 'tmux', 'git', 'all'}:
+    eval(args[1])()
+else:
+    print('Invalid argument')
+
