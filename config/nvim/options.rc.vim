@@ -19,22 +19,6 @@ set wildmenu
 set wildmode=list:longest,full
 " コマンドモードの履歴
 set history=5000
-
-" 見た目系
-" 空行の~の色を変えてなるべく目立たないように
-autocmd ColorScheme * highlight EndOfBuffer ctermfg=17 guifg=17
-" 背景色はターミナルのものを維持
-autocmd ColorScheme * highlight Normal ctermbg=none
-autocmd ColorScheme * highlight LineNr ctermbg=none
-
-
-" シンタックスハイライト
-syntax enable
-" 境界
-set fillchars=vert:\ ,stl:\ ,stlnc:\ ,fold:-,diff:┄
-" カラースキーム TODO: 熟考せよ
-colorscheme slate
-
 " 行番号を表示
 set number
 " 現在の行を強調表示
@@ -55,6 +39,19 @@ set laststatus=2
 set wildmode=list:longest
 " 折り返しマーク
 set showbreak=↪
+
+" 見た目系
+" 空行の~の色を変えてなるべく目立たないように
+autocmd ColorScheme * highlight EndOfBuffer ctermfg=17 guifg=17
+" 背景色はターミナルのものを維持
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
+" シンタックスハイライト
+syntax enable
+" 境界
+set fillchars=vert:\ ,stl:\ ,stlnc:\ ,fold:-,diff:┄
+" カラースキーム TODO: 熟考せよ
+colorscheme slate
 
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
