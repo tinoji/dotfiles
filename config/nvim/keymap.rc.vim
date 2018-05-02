@@ -25,10 +25,8 @@ nnoremap k gk
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-"=============================================================
 " 画面分割・タブ
 " See: https://qiita.com/tekkoc/items/98adcadfa4bdc8b5a6ca
-"=============================================================
 nnoremap s <Nop>
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -53,4 +51,12 @@ nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
+
+" ターミナルモード
+tnoremap <silent> <ESC> <C-\><C-n>
+"tnoremap <silent> jj <C-\><C-n>
+nnoremap tt :<C-u>Tnew<CR>
+
+" 一気に終了
+nnoremap QQ :<C-u>wqa<CR>
 

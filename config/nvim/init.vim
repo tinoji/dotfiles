@@ -23,8 +23,6 @@ endif
 call dein#begin(s:dein_dir)
 call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
-
-" Pluginをここに追加していく
 call dein#add('scrooloose/nerdtree')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('altercation/vim-colors-solarized')
@@ -37,6 +35,7 @@ call dein#add('Yggdroot/indentLine')
 call dein#add('Shougo/deoplete.nvim')
 call dein#add('Shougo/neco-syntax')
 call dein#add('kana/vim-submode')
+call dein#add('kassio/neoterm')
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
@@ -100,6 +99,10 @@ call submode#map('winsize', 'n', '', '>', '<C-w>>')
 call submode#map('winsize', 'n', '', '<', '<C-w><')
 call submode#map('winsize', 'n', '', '+', '<C-w>+')
 call submode#map('winsize', 'n', '', '-', '<C-w>-')
+
+""" neoterm
+let g:neoterm_default_mod = "belowright"
+let g:neoterm_size = 9
 
 
 "==========
