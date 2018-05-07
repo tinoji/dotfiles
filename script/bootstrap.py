@@ -34,7 +34,7 @@ def vim():
 
 def tmux():
     print('>>> tmux')
-    os.system('ln -sf ~/dotfiles/config/tmux/.tmux.cui.conf ~/.tmux.conf')
+    os.system('ln -sf ~/dotfiles/config/tmux/.tmux.conf ~/.tmux.conf')
     # os.system('cp -rf ~/dotfiles/config/tmux/.tmux-powerline ~/.tmux-powerline')
     # os.system('ln -sf ~/dotfiles/config/tmux/default_cui.sh ~/.tmux-powerline/themes/default.sh')
     # os.system('ln -sf ~/dotfiles/config/tmux/tmux_mem_cpu_load.sh ~/.tmux-powerline/segments/tmux_mem_cpu_load.sh')
