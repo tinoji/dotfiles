@@ -68,6 +68,8 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 """ vim-go
 " バージョンに関するwarningを表示しない
 let g:go_version_warning = 0
+" vim-auto-saveとバッティングするので無効にする
+let g:go_fmt_autosave = 0
 
 """ vim-auto-save
 " 有効にする
