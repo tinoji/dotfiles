@@ -45,6 +45,11 @@ def git():
     os.system('ln -sf  ~/dotfiles/config/git/.gitconfig ~/.gitconfig')
     print('<<< [ok] git')
 
+def karabiner():
+    print('>>> karabiner')
+    os.system('ln -sf  ~/dotfiles/config/karabiner/mac_karabiner.json ~/.config/karabiner/karabiner.json')
+    print('<<< [ok] karabiner')
+
 def all():
     zsh()
     vim()
@@ -53,7 +58,7 @@ def all():
 
 if len(args) < 2:
     print('Argument is needed')
-elif args[1] in {'zsh', 'vim', 'tmux', 'git', 'all'}:
+elif args[1] in {'zsh', 'vim', 'tmux', 'git', 'karabiner', 'all'}:
     eval(args[1])()
 else:
     print('Invalid argument')
