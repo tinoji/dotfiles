@@ -62,6 +62,34 @@ hook_add = ''' "{{{
 repo = 'Shougo/neco-syntax'
 
 [[plugins]]
+repo = 'vim-syntastic/syntastic'
+hook_add = ''' "{{{
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+
+    " active_filetypesに言語を追加すると自動実行される
+    let g:syntastic_mode_map = {
+        \ 'mode': 'passive',
+        \ 'active_filetypes': []
+    \ }
+
+    let g:syntastic_javascript_checkers=['eslint']
+    let g:syntastic_ruby_checkers = ['rubocop']
+
+    let g:syntastic_error_symbol='✗'
+    let g:syntastic_style_error_symbol = '✗'
+    let g:syntastic_warning_symbol = '⚠'
+    let g:syntastic_style_warning_symbol = '⚠'
+''' #}}}
+# 色はoptions.rc.vimに記述
+
+[[plugins]]
 repo = 'kana/vim-submode'
 hook_add = ''' "{{{
     call submode#enter_with('winsize', 'n', '', '<C-w>>', '<C-w>>')

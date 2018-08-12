@@ -52,6 +52,15 @@ syntax enable
 set fillchars=vert:\ ,stl:\ ,stlnc:\ ,fold:-,diff:┄
 " カラースキーム
 colorscheme slate
+" 対応するカッコの色を変更
+highlight MatchParen ctermbg=240
+" syntasticの色変更
+highlight SyntasticError ctermfg=255 ctermbg=124
+highlight SyntasticErrorSign ctermfg=255 ctermbg=124
+"highlight SyntasticErrorLine ctermbg=130
+highlight SyntasticWarning ctermfg=255 ctermbg=214
+"highlight SyntasticWarningLine ctermbg=154
+highlight SyntasticWarningSign ctermfg=255 ctermbg=214
 
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
@@ -93,7 +102,4 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.go setlocal noexpandtab list&
 augroup END
-
-" 対応するカッコの色を変更
-hi MatchParen ctermbg=240
 
