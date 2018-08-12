@@ -11,7 +11,6 @@ args = sys.argv
 
 def zsh():
     print('>>> zsh')
-    os.system('ln -sf  ~/dotfiles/config/zsh/.zprofile ~/.zprofile')
     os.system('ln -sf  ~/dotfiles/config/zsh/.zshrc ~/.zshrc')
     os.system('ln -sf  ~/dotfiles/config/zsh/.zshenv ~/.zshenv')
     os.system('ln -sf  ~/dotfiles/config/zsh/.zsh/ ~/.zsh/')
