@@ -1,0 +1,106 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = ''' "{{{
+    nnoremap <silent><C-t> :NERDTreeToggle<CR>
+    let g:NERDTreeShowHidden = 1
+
+    " auto execute
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") |
+        \ exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+''' #}}}
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'vim-scripts/vim-auto-save'
+hook_add = ''' "{{{
+    let g:auto_save = 1
+''' #}}}
+
+[[plugins]]
+repo = 'ConradIrwin/vim-bracketed-paste'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = ''' "{{{
+    let g:lightline = {
+        \ 'colorscheme': 'wombat'
+        \ }
+''' #}}}
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_add = ''' "{{{
+    set list listchars=tab:\¦\ 
+''' #}}}
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = ''' "{{{
+    let g:deoplete#enable_at_startup = 1
+    autocmd ColorScheme * highlight Pmenu ctermbg=245 ctermfg=235
+    autocmd ColorScheme * highlight PmenuSel ctermbg=237 ctermfg=245
+    call deoplete#custom#option({
+        \ 'auto_complete_delay': 300,
+        \ 'smart_case': v:true,
+        \ })
+''' #}}}
+
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+
+[[plugins]]
+repo = 'kana/vim-submode'
+hook_add = ''' "{{{
+    call submode#enter_with('winsize', 'n', '', '<C-w>>', '<C-w>>')
+    call submode#enter_with('winsize', 'n', '', '<C-w><', '<C-w><')
+    call submode#enter_with('winsize', 'n', '', '<C-w>+', '<C-w>+')
+    call submode#enter_with('winsize', 'n', '', '<C-w>-', '<C-w>-')
+    call submode#map('winsize', 'n', '', '>', '<C-w>>')
+    call submode#map('winsize', 'n', '', '<', '<C-w><')
+    call submode#map('winsize', 'n', '', '+', '<C-w>+')
+    call submode#map('winsize', 'n', '', '-', '<C-w>-')
+''' #}}}
+
+[[plugins]]
+repo = 'kassio/neoterm'
+hook_add = ''' "{{{
+    let g:neoterm_default_mod = "belowright"
+    let g:neoterm_size = 9
+''' #}}}
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+if = '''! has('nvim')'''
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if = '''! has('nvim')'''
+
+
+#################
+# For languages
+#################
+[[plugins]]
+repo = 'fatih/vim-go'
+hook_add = ''' "{{{
+    let g:go_version_warning = 0
+    " avoid conflict with vim-auto-save
+    let g:go_fmt_autosave = 0
+''' #}}}
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
