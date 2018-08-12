@@ -9,7 +9,8 @@ repo = 'scrooloose/nerdtree'
 hook_add = ''' "{{{
     nnoremap <silent><C-t> :NERDTreeToggle<CR>
     let g:NERDTreeShowHidden = 1
-    " 自動でNERDTreeを開く
+
+    " auto execute
     autocmd StdinReadPre * let s:std_in=1
     autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
     autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") |
@@ -95,9 +96,8 @@ if = '''! has('nvim')'''
 [[plugins]]
 repo = 'fatih/vim-go'
 hook_add = ''' "{{{
-    " バージョンに関するwarningを表示しない
     let g:go_version_warning = 0
-    " vim-auto-saveとバッティングするので無効にする
+    " avoid conflict with vim-auto-save
     let g:go_fmt_autosave = 0
 ''' #}}}
 
