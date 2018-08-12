@@ -8,7 +8,6 @@ alias df='df -h'
 alias sudo='sudo '
 alias source='source '
 alias rm=rmtrash
-alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
 
 # ls command colors
 export LSCOLORS=cxfxcxdxbxegedabagacad
@@ -16,15 +15,15 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' list-colors 'di=33' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
-#history
+# history
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-# 同時に起動したzshの間でヒストリを共有する
+# share history between zsh
 setopt share_history
 
-# pecoの設定
+# peco
 function peco-history-selection() {
       BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
           CURSOR=$#BUFFER
@@ -34,7 +33,8 @@ function peco-history-selection() {
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
-# tmuxの起動
+# tmux
+# From: https://github.com/b4b4r07/dotfiles
 function is_exists() { type "$1" >/dev/null 2>&1; return $?; }
 function is_osx() { [[ $OSTYPE == darwin* ]]; }
 function is_screen_running() { [ ! -z "$STY" ]; }
@@ -97,45 +97,36 @@ function tmux_automatically_attach_session()
 }
 tmux_automatically_attach_session
 
-
-# ブランチ名を色付きで表示させるメソッド
+# coloring of git branch status
 function rprompt-git-current-branch {
   local branch_name st branch_status
 
   if [ ! -e  ".git" ]; then
-    # gitで管理されていないディレクトリは何も返さない
+    # not git dir
     return
   fi
   branch_name=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
   st=`git status 2> /dev/null`
   if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
-    # 全てcommitされてクリーンな状態
     branch_status="%F{green}"
   elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
-    # gitに管理されていないファイルがある状態
     branch_status="%F{red}?"
   elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
-    # git addされていないファイルがある状態
     branch_status="%F{red}+"
   elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
-    # git commitされていないファイルがある状態
     branch_status="%F{yellow}!"
   elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
-    # コンフリクトが起こった状態
     echo "%F{red}!(no branch)"
     return
   else
-    # 上記以外の状態の場合は青色で表示させる
+    # the other cases
     branch_status="%F{blue}"
   fi
-  # ブランチ名を色付きで表示する
+  # show branch name
   echo "${branch_status}[$branch_name]"
 }
 
-# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
-
-# プロンプトの右側(RPROMPT)にメソッドの結果を表示させる
 RPROMPT='`rprompt-git-current-branch`'
 
 
