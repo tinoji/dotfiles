@@ -50,7 +50,7 @@ autocmd ColorScheme * highlight LineNr ctermbg=none
 syntax enable
 " 境界
 set fillchars=vert:\ ,stl:\ ,stlnc:\ ,fold:-,diff:┄
-" カラースキーム TODO: 熟考せよ
+" カラースキーム
 colorscheme slate
 
 " 検索系
@@ -84,7 +84,7 @@ set autoindent
 "{があると次の行は自動で1段深く自動インデント
 set smartindent
 
-"拡張子ごとの設定
+" 拡張子ごとの設定
 augroup fileTypeIndent
     autocmd!
     autocmd BufNewFile,BufRead *.py setlocal tabstop=4 softtabstop=4 shiftwidth=4
@@ -94,4 +94,6 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.go setlocal noexpandtab list&
 augroup END
 
+" 対応するカッコの色を変更
+hi MatchParen ctermbg=240
 

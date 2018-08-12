@@ -82,6 +82,9 @@ hook_add = ''' "{{{
 ''' #}}}
 
 [[plugins]]
+repo = 'guns/xterm-color-table.vim'
+
+[[plugins]]
 repo = 'roxma/nvim-yarp'
 if = '''! has('nvim')'''
 
