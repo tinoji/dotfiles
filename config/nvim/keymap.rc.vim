@@ -1,6 +1,8 @@
-" 移動
+" escape
 inoremap <silent> jj <ESC>
 inoremap <silent> っj <ESC>
+
+" move
 noremap <C-a> 0
 noremap <C-e> $
 inoremap <C-a> <C-o>^
@@ -10,7 +12,13 @@ inoremap <C-j> <Down>
 inoremap <C-l> <Right>
 inoremap <C-h> <Left>
 
-" 日本語入力がオンのままでも使えるコマンド(Enterキーは必要)
+" lower/upper
+xnoremap u <nop>
+xnoremap U <nop>
+nnoremap gu <nop>
+nnoremap gU <nop>
+
+" for Japanese
 nnoremap あ a
 nnoremap い i
 nnoremap う u
@@ -18,14 +26,14 @@ nnoremap お o
 nnoremap っd dd
 nnoremap っy yy
 
-" 折り返し時に表示行単位での移動できるようにする
+" line wrap
 nnoremap j gj
 nnoremap k gk
 
-" ESC連打でハイライト解除
+" deactivate highlight by repeating ESC
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-" 画面分割・タブ
+" split window and tab
 " See: https://qiita.com/tekkoc/items/98adcadfa4bdc8b5a6ca
 nnoremap s <Nop>
 nnoremap sj <C-w>j
@@ -52,11 +60,10 @@ nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 
-" ターミナルモード
+" neoterm
 tnoremap <silent> <ESC> <C-\><C-n>
-"tnoremap <silent> jj <C-\><C-n>
 nnoremap tt :<C-u>Tnew<CR>
 
-" 一気に終了
+" quit all
 nnoremap QQ :<C-u>wqa<CR>
 
