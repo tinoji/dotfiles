@@ -1,37 +1,7 @@
-# alias
-alias u='cd ..'
-alias ls='ls -G'
-alias ll='ls -laGh'
-alias grep='grep --color'
-alias sed=gsed
-alias df='df -h'
-alias sudo='sudo '
-alias source='source '
-alias rm=rmtrash
-
-# ls command colors
-export LSCOLORS=cxfxcxdxbxegedabagacad
-autoload -U compinit
-compinit
-zstyle ':completion:*' list-colors 'di=33' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-
-# history
-HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
-
-# share history between zsh
-setopt share_history
-
-# peco
-function peco-history-selection() {
-      BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-          CURSOR=$#BUFFER
-              zle reset-prompt
-}
-
-zle -N peco-history-selection
-bindkey '^R' peco-history-selection
+# load .zsh dir
+for i in ~/.zsh/*.zsh; do
+  source $i
+done
 
 # tmux
 # From: https://github.com/b4b4r07/dotfiles
@@ -126,7 +96,5 @@ function rprompt-git-current-branch {
   echo "${branch_status}[$branch_name]"
 }
 
-setopt prompt_subst
 RPROMPT='`rprompt-git-current-branch`'
-
 
