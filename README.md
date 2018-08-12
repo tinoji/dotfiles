@@ -15,9 +15,3 @@ python dotfiles/script/bootstrap.py all
 NOTES
 ------
 Add PATH used only in local to `.zprofile`.
-
-
-TODO
-------
-- Windows karabiner?
-
