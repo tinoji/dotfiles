@@ -22,9 +22,11 @@ set history=5000
 " 行番号を表示
 set number
 " 現在の行を強調表示
-"set cursorline
+set cursorline!
 " 現在の行を強調表示（縦）
 "set cursorcolumn
+" スクロールの遅さを解消
+set lazyredraw
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit+=onemore
 " インデントはスマートインデント
