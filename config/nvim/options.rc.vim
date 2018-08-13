@@ -22,7 +22,7 @@ set history=5000
 " 行番号を表示
 set number
 " 現在の行を強調表示
-set cursorline
+"set cursorline
 " 現在の行を強調表示（縦）
 "set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
@@ -39,28 +39,6 @@ set laststatus=2
 set wildmode=list:longest
 " 折り返しマーク
 set showbreak=↪
-
-" 見た目系
-" 空行の~の色を変えてなるべく目立たないように
-autocmd ColorScheme * highlight EndOfBuffer ctermfg=17 guifg=17
-" 背景色はターミナルのものを維持
-autocmd ColorScheme * highlight Normal ctermbg=none
-autocmd ColorScheme * highlight LineNr ctermbg=none
-" シンタックスハイライト
-syntax enable
-" 境界
-set fillchars=vert:\ ,stl:\ ,stlnc:\ ,fold:-,diff:┄
-" カラースキーム
-colorscheme slate
-" 対応するカッコの色を変更
-highlight MatchParen ctermbg=240
-" syntasticの色変更
-highlight SyntasticError ctermfg=255 ctermbg=124
-highlight SyntasticErrorSign ctermfg=255 ctermbg=124
-"highlight SyntasticErrorLine ctermbg=130
-highlight SyntasticWarning ctermfg=255 ctermbg=214
-"highlight SyntasticWarningLine ctermbg=154
-highlight SyntasticWarningSign ctermfg=255 ctermbg=214
 
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する

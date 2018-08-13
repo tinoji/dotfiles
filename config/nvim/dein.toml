@@ -9,6 +9,7 @@ repo = 'scrooloose/nerdtree'
 hook_add = ''' "{{{
     nnoremap <silent><C-t> :NERDTreeToggle<CR>
     let g:NERDTreeShowHidden = 1
+    let g:NERDTreeHighlightCursorline=0
 
     " auto execute
     autocmd StdinReadPre * let s:std_in=1
@@ -111,6 +112,12 @@ hook_add = ''' "{{{
 
 [[plugins]]
 repo = 'guns/xterm-color-table.vim'
+
+[[plugins]]
+repo = 'cocopon/pgmnt.vim'
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
 repo = 'roxma/nvim-yarp'

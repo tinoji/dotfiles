@@ -26,6 +26,8 @@ def vim():
     os.system('ln -sf ~/dotfiles/config/nvim/init.vim ~/.vimrc')
     os.system('ln -sf ~/dotfiles/config/nvim/options.rc.vim ~/.vim/')
     os.system('ln -sf ~/dotfiles/config/nvim/keymap.rc.vim ~/.vim/')
+    os.system('ln -sf ~/dotfiles/config/nvim/color.rc.vim ~/.vim/')
+
     # Dependency
     # $ pip2 install --user --upgrade neovim
     # $ pip3 install --user --upgrade neovim
@@ -36,9 +38,6 @@ def vim():
 def tmux():
     print('>>> tmux')
     os.system('ln -sf ~/dotfiles/config/tmux/.tmux.conf ~/.tmux.conf')
-    # os.system('cp -rf ~/dotfiles/config/tmux/.tmux-powerline ~/.tmux-powerline')
-    # os.system('ln -sf ~/dotfiles/config/tmux/default_cui.sh ~/.tmux-powerline/themes/default.sh')
-    # os.system('ln -sf ~/dotfiles/config/tmux/tmux_mem_cpu_load.sh ~/.tmux-powerline/segments/tmux_mem_cpu_load.sh')
     print('<<< [ok] tmux')
 
 def git():
