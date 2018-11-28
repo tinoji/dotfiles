@@ -1,7 +1,4 @@
 [[plugins]]
-repo = 'Shougo/dein.vim'
-
-[[plugins]]
 repo = 'Shougo/vimproc.vim'
 
 [[plugins]]
@@ -134,11 +131,22 @@ if = '''! has('nvim')'''
 [[plugins]]
 repo = 'fatih/vim-go'
 hook_add = ''' "{{{
+    let g:go_autodetect_gopath = 1
     let g:go_version_warning = 0
+    let g:go_fmt_command = "goimports"
     " avoid conflict with vim-auto-save
     let g:go_fmt_autosave = 0
 ''' #}}}
 
 [[plugins]]
 repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+build = 'make'
+on_ft = 'go'
+depends = ['deoplete.nvim']
+hook_add = ''' "{{{
+    let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+''' #}}}
 
