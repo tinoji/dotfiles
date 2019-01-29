@@ -60,7 +60,6 @@ repo = 'Shougo/neco-syntax'
 repo = 'vim-syntastic/syntastic'
 hook_add = ''' "{{{
     set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*
 
     let g:syntastic_always_populate_loc_list = 1
@@ -156,4 +155,9 @@ hook_add = ''' "{{{
 ''' #}}}
 
 [[plugins]]
-repo = 'b4b4r07/vim-hcl'
+repo = 'hashivim/vim-terraform'
+
+[[plugins]]
+repo = 'juliosueiras/vim-terraform-completion'
+
+
