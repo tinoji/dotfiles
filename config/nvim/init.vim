@@ -35,4 +35,3 @@ endif
 runtime! options.rc.vim
 runtime! keymap.rc.vim
 runtime! color.rc.vim
-

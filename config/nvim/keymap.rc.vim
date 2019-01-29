@@ -66,4 +66,3 @@ nnoremap tt :<C-u>Tnew<CR>
 
 " quit all
 nnoremap QQ :<C-u>wqa<CR>
-
