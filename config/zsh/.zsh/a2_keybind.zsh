@@ -1,3 +1,6 @@
+bindkey -M viins '^A'  beginning-of-line
+bindkey -M viins '^E'  end-of-line
+
 # peco
 function peco-history-selection() {
       BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
