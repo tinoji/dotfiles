@@ -1,17 +1,11 @@
 [[plugins]]
-repo = 'Shougo/dein.vim'
-
-[[plugins]]
 repo = 'Shougo/vimproc.vim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
-hook_add = ''' "{{{
-    nnoremap <silent><C-t> :NERDTreeToggle<CR>
+hook_add = ''' "{{{ nnoremap <silent><C-t> :NERDTreeToggle<CR>
     let g:NERDTreeShowHidden = 1
-    let g:NERDTreeHighlightCursorline=0
-
-    " auto execute
+    let g:NERDTreeHighlightCursorline=0 " auto execute
     autocmd StdinReadPre * let s:std_in=1
     autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
     autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") |
@@ -44,7 +38,7 @@ repo = 'bronson/vim-trailing-whitespace'
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 hook_add = ''' "{{{
-    set list listchars=tab:\¦\ 
+    set list listchars=tab:\¦\
 ''' #}}}
 
 [[plugins]]
@@ -66,7 +60,6 @@ repo = 'Shougo/neco-syntax'
 repo = 'vim-syntastic/syntastic'
 hook_add = ''' "{{{
     set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
     set statusline+=%*
 
     let g:syntastic_always_populate_loc_list = 1
@@ -127,16 +120,26 @@ if = '''! has('nvim')'''
 repo = 'roxma/vim-hug-neovim-rpc'
 if = '''! has('nvim')'''
 
-
 #################
 # For languages
 #################
 [[plugins]]
 repo = 'fatih/vim-go'
 hook_add = ''' "{{{
+    let g:go_autodetect_gopath = 1
     let g:go_version_warning = 0
+    let g:go_fmt_command = "goimports"
     " avoid conflict with vim-auto-save
     let g:go_fmt_autosave = 0
+''' #}}}
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+build = 'make'
+on_ft = 'go'
+depends = ['deoplete.nvim']
+hook_add = ''' "{{{
+    let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 ''' #}}}
 
 [[plugins]]
@@ -148,3 +151,17 @@ repo = 'pangloss/vim-javascript'
 [[plugins]]
 repo = 'heavenshell/vim-jsdoc'
 
+[[plugins]]
+repo = 'billyvg/tigris.nvim'
+on_ft = ['javascript', 'javascript.jsx']
+hook_add = ''' "{{{
+    let g:tigris#enabled = 1
+    let g:tigris#on_the_fly_enabled = 1
+    let g:tigris#delay = 300
+''' #}}}
+
+[[plugins]]
+repo = 'hashivim/vim-terraform'
+
+[[plugins]]
+repo = 'juliosueiras/vim-terraform-completion'

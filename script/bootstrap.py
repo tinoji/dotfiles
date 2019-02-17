@@ -13,7 +13,7 @@ def zsh():
     print('>>> zsh')
     os.system('ln -sf  ~/dotfiles/config/zsh/.zshrc ~/.zshrc')
     os.system('ln -sf  ~/dotfiles/config/zsh/.zshenv ~/.zshenv')
-    os.system('ln -sf  ~/dotfiles/config/zsh/.zsh/ ~/.zsh/')
+    os.system('ln -sf  ~/dotfiles/config/zsh/.zsh/ ~/')
     print('<<< [ok] zsh')
 
 def vim():
@@ -24,6 +24,7 @@ def vim():
     os.system('ln -nsf ~/dotfiles/config/nvim ~/.config/')
     # vim
     os.system('ln -sf ~/dotfiles/config/nvim/init.vim ~/.vimrc')
+    os.system('ln -sf ~/dotfiles/config/nvim/dein.toml ~/.vim/')
     os.system('ln -sf ~/dotfiles/config/nvim/options.rc.vim ~/.vim/')
     os.system('ln -sf ~/dotfiles/config/nvim/keymap.rc.vim ~/.vim/')
     os.system('ln -sf ~/dotfiles/config/nvim/color.rc.vim ~/.vim/')
