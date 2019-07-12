@@ -66,10 +66,11 @@ hook_add = ''' "{{{
 repo = 'Shougo/deoplete.nvim'
 hook_add = ''' "{{{
     let g:deoplete#enable_at_startup = 1
+    let g:deoplete#auto_complete_start_length = 1
     autocmd ColorScheme * highlight Pmenu ctermbg=245 ctermfg=235
     autocmd ColorScheme * highlight PmenuSel ctermbg=237 ctermfg=245
     call deoplete#custom#option({
-        \ 'auto_complete_delay': 300,
+        \ 'auto_complete_delay': 100,
         \ 'smart_case': v:true,
         \ })
 ''' #}}}
@@ -77,31 +78,32 @@ hook_add = ''' "{{{
 [[plugins]]
 repo = 'Shougo/neco-syntax'
 
-[[plugins]]
-repo = 'vim-syntastic/syntastic'
-hook_add = ''' "{{{
-    set statusline+=%#warningmsg#
-    set statusline+=%*
-
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-
-    " active_filetypesに言語を追加すると自動実行される
-    let g:syntastic_mode_map = {
-        \ 'mode': 'passive',
-        \ 'active_filetypes': []
-    \ }
-
-    let g:syntastic_javascript_checkers=['eslint']
-    let g:syntastic_ruby_checkers = ['rubocop']
-
-    let g:syntastic_error_symbol='✗'
-    let g:syntastic_style_error_symbol = '✗'
-    let g:syntastic_warning_symbol = '⚠'
-    let g:syntastic_style_warning_symbol = '⚠'
-''' #}}}
+# TODO: aleと競合する？
+# [[plugins]]
+# repo = 'vim-syntastic/syntastic'
+# hook_add = ''' "{{{
+#     set statusline+=%#warningmsg#
+#     set statusline+=%*
+#
+#     let g:syntastic_always_populate_loc_list = 1
+#     let g:syntastic_auto_loc_list = 1
+#     let g:syntastic_check_on_open = 1
+#     let g:syntastic_check_on_wq = 0
+#
+#     " active_filetypesに言語を追加すると自動実行される
+#     let g:syntastic_mode_map = {
+#         \ 'mode': 'passive',
+#         \ 'active_filetypes': []
+#     \ }
+#
+#     let g:syntastic_javascript_checkers=['eslint']
+#     let g:syntastic_ruby_checkers = ['rubocop']
+#
+#     let g:syntastic_error_symbol='✗'
+#     let g:syntastic_style_error_symbol = '✗'
+#     let g:syntastic_warning_symbol = '⚠'
+#     let g:syntastic_style_warning_symbol = '⚠'
+# ''' #}}}
 # 色はoptions.rc.vimに記述
 
 [[plugins]]
@@ -183,7 +185,26 @@ on_ft = 'go'
 depends = ['deoplete.nvim']
 hook_add = ''' "{{{
     let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+    let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
+    let g:deoplete#sources#go#source_importer = 1
+    let g:deoplete#sources#go#pointer = 1
+    let g:deoplete#sources#go#unimported_packages = 1
 ''' #}}}
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+build = 'bash install.sh'
+rev = 'next'
+hook_add = '''
+  set hidden
+  let g:LanguageClient_serverCommands = {
+      \ 'go': ['gopls']
+      \ }
+  let g:LanguageClient_loadSettings = 1
+  nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+  nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+'''
 
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -208,3 +229,4 @@ repo = 'hashivim/vim-terraform'
 
 [[plugins]]
 repo = 'juliosueiras/vim-terraform-completion'
+
