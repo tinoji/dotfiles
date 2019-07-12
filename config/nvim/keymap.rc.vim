@@ -1,3 +1,6 @@
+" leader
+let mapleader = ";"
+
 " escape
 inoremap <silent> jj <ESC>
 inoremap <silent> っj <ESC>
@@ -66,3 +69,10 @@ nnoremap tt :<C-u>Tnew<CR>
 
 " quit all
 nnoremap QQ :<C-u>wqa<CR>
+
+" vim-go
+nnoremap gb :GoDebugBreakpoint<CR>
+autocmd FileType go nmap <Leader>ga <Plug>(go-alternate-edit)
+autocmd FileType go nmap <Leader>gah <Plug>(go-alternate-split)
+autocmd FileType go nmap <Leader>gav <Plug>(go-alternate-vertical)
+
