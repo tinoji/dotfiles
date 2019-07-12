@@ -71,7 +71,14 @@ nnoremap tt :<C-u>Tnew<CR>
 nnoremap QQ :<C-u>wqa<CR>
 
 " vim-go
-nnoremap gb :GoDebugBreakpoint<CR>
+autocmd FileType go nmap db :GoDebugBreakpoint<CR>
+autocmd FileType go nmap dn :GoDebugNext<CR>
+autocmd FileType go nmap ds :GoDebugStep<CR>
+autocmd FileType go nmap do :GoDebugStepOut<CR>
+autocmd FileType go nmap dp :GoDebugPrint<CR>
+autocmd FileType go nmap dc :GoDebugContinue<CR>
+autocmd FileType go nmap dS :GoDebugStop<CR>
+
 autocmd FileType go nmap <Leader>ga <Plug>(go-alternate-edit)
 autocmd FileType go nmap <Leader>gah <Plug>(go-alternate-split)
 autocmd FileType go nmap <Leader>gav <Plug>(go-alternate-vertical)
