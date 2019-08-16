@@ -22,8 +22,10 @@ export GIT_EDITOR="${EDITOR}"
 export PAGER=less
 export LESSCHARSET='utf-8'
 
-# ls command colors
-export LSCOLORS=cxfxcxdxbxegedabagacad
+# color
+export LSCOLORS=ExFxBxDxCxegedabagacad
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export CLICOLOR=1
 
 # history
 export HISTFILE=~/.zsh_history
@@ -35,7 +37,13 @@ export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 
-#prompt
+# prompt
 export PROMPT='%F{cyan}[%d]
 $%f '
+
+# Android
+export PATH=/usr/local/bin/platform-tools/:$PATH
+
+# color
+source "`brew --prefix`/etc/grc.bashrc"
 
