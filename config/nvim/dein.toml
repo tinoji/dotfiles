@@ -156,6 +156,9 @@ hook_add = ''' "{{{
         \ 'out':   'botright 15new',
         \ 'vars':  'leftabove 100vnew',
     \ }
+
+    " lint
+      let g:go_metalinter_command = "golangci-lint"
 ''' #}}}
 
 # [[plugins]]
