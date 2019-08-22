@@ -62,10 +62,13 @@ hook_add = ''' "{{{
     let g:deoplete#auto_complete_start_length = 1
     autocmd ColorScheme * highlight Pmenu ctermbg=245 ctermfg=235
     autocmd ColorScheme * highlight PmenuSel ctermbg=237 ctermfg=245
+
     call deoplete#custom#option({
         \ 'auto_complete_delay': 200,
         \ 'smart_case': v:true,
         \ })
+
+    autocmd FileType go call deoplete#custom#buffer_option('auto_complete', v:false)
 ''' #}}}
 
 [[plugins]]
@@ -110,8 +113,8 @@ repo = 'w0rp/ale'
 hook_add = ''' "{{{
     let g:ale_sign_error = '⤫'
     let g:ale_sign_warning = '⚠'
-    "let g:ale_sign_column_always = 1
-    "let g:ale_change_sign_column_color = 0
+    let g:ale_sign_column_always = 1
+    let g:ale_change_sign_column_color = 0
 
     let g:ale_enabled = 1
     let g:ale_lint_on_text_changed = 0
@@ -120,18 +123,7 @@ hook_add = ''' "{{{
     let g:ale_lint_on_filetype_changed = 1
     let g:ale_lint_on_insert_leave = 1
 
-    let g:ale_linters = {
-      \  'go': ['gobuild', 'gofmt', 'govet', 'staticcheck', 'golangci-lint'],
-      \ }
-
-    let g:ale_go_staticcheck_lint_package = 1
-    let g:ale_go_golangci_lint_package = 1
-    let g:ale_go_golangci_lint_options =
-      \ '--enable-all
-      \ --disable lll
-      \ --disable gochecknoglobals
-      \ --disable interfacer
-      \ --disable gochecknoinits'
+    let g:ale_linters = {'go': []}
 ''' #}}}
 
 
@@ -166,19 +158,19 @@ hook_add = ''' "{{{
     \ }
 ''' #}}}
 
-[[plugins]]
-repo = 'zchee/deoplete-go'
-build = 'make'
-on_ft = 'go'
-depends = ['deoplete.nvim']
-hook_add = ''' "{{{
-    let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-    let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-    let g:deoplete#sources#go#source_importer = 1
-    let g:deoplete#sources#go#package_dot = 0
-    let g:deoplete#sources#go#pointer = 1
-    let g:deoplete#sources#go#unimported_packages = 1
-''' #}}}
+# [[plugins]]
+# repo = 'zchee/deoplete-go'
+# build = 'make'
+# on_ft = 'go'
+# depends = ['deoplete.nvim']
+# hook_add = ''' "{{{
+#     let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+#     let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+#     let g:deoplete#sources#go#source_importer = 1
+#     let g:deoplete#sources#go#package_dot = 0
+#     let g:deoplete#sources#go#pointer = 1
+#     let g:deoplete#sources#go#unimported_packages = 1
+# ''' #}}}
 
 # [[plugins]]
 # repo = 'autozimu/LanguageClient-neovim'
