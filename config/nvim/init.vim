@@ -7,6 +7,9 @@ let g:python3_host_prog  = '/usr/local/bin/python3'
 " Skip the check of neovim module
 let g:python3_host_skip_check = 1
 
+" runtimepath
+execute 'set runtimepath^=~/.vim'
+
 " dein dir
 let s:dein_dir = expand('~/.vim/dein')
 " dein.vim
