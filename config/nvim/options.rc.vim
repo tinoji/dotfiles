@@ -22,7 +22,7 @@ set history=5000
 " 行番号を表示
 set number
 " 現在の行を強調表示
-set cursorline!
+set cursorline
 " 現在の行を強調表示（縦）
 "set cursorcolumn
 " スクロールの遅さを解消
