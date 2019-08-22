@@ -28,6 +28,8 @@ def vim():
     os.system('ln -sf ~/dotfiles/config/nvim/options.rc.vim ~/.vim/')
     os.system('ln -sf ~/dotfiles/config/nvim/keymap.rc.vim ~/.vim/')
     os.system('ln -sf ~/dotfiles/config/nvim/color.rc.vim ~/.vim/')
+    os.system('ln -sf ~/dotfiles/config/nvim/coc-settings.vim ~/.vim/')
+    os.system('ln -sf ~/dotfiles/config/nvim/coc-settings.json ~/.vim/')
 
     # Dependency
     # $ pip2 install --user --upgrade neovim
