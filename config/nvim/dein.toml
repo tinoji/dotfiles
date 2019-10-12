@@ -206,3 +206,6 @@ repo = 'hashivim/vim-terraform'
 [[plugins]]
 repo = 'juliosueiras/vim-terraform-completion'
 
+[[plugins]]
+repo = 'Glench/Vim-Jinja2-Syntax'
+
