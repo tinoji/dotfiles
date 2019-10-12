@@ -83,4 +83,5 @@ augroup fileTypeIndent
     autocmd BufNewFile,BufRead *.go setlocal noexpandtab list&
     autocmd BufNewFile,BufRead *.js setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.tf setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufRead,BufNewFile *.template.yaml set ft=cloudformation.yaml
 augroup END
