@@ -198,9 +198,6 @@ build = './install.sh nightly'
 hook_add = 'source ~/.vim/coc-settings.vim'
 
 [[plugins]]
-repo = 'neoclide/coc-python'
-
-[[plugins]]
 repo = 'cespare/vim-toml'
 
 [[plugins]]
@@ -211,4 +208,7 @@ repo = 'juliosueiras/vim-terraform-completion'
 
 [[plugins]]
 repo = 'Glench/Vim-Jinja2-Syntax'
+
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
 
