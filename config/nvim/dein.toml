@@ -198,6 +198,9 @@ build = './install.sh nightly'
 hook_add = 'source ~/.vim/coc-settings.vim'
 
 [[plugins]]
+repo = 'neoclide/coc-python'
+
+[[plugins]]
 repo = 'cespare/vim-toml'
 
 [[plugins]]
