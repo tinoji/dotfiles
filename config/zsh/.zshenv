@@ -38,6 +38,9 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export GO111MODULE=on
 
+# python
+export PATH=$PATH:$HOME/.local/bin
+
 # prompt
 export PROMPT='%F{cyan}[%d]
 $%f '
