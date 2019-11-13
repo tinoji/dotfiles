@@ -36,6 +36,7 @@ export SAVEHIST=1000000
 export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
+export GO111MODULE=on
 
 # prompt
 export PROMPT='%F{cyan}[%d]
