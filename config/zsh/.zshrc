@@ -86,3 +86,6 @@ function rprompt-git-current-branch {
 
 RPROMPT='`rprompt-git-current-branch`'
 
+# pyenv
+eval "$(pyenv init -)"
+
