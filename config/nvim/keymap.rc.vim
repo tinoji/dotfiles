@@ -8,12 +8,15 @@ inoremap <silent> っj <ESC>
 " move
 noremap <C-a> 0
 noremap <C-e> $
+noremap <C-[> <C-o> " jump back
+noremap <C-]> <C-i> " jump forward
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-l> <Right>
 inoremap <C-h> <Left>
+
 
 " lower/upper
 xnoremap u <nop>
