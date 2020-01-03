@@ -212,3 +212,6 @@ repo = 'Glench/Vim-Jinja2-Syntax'
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 
+[[plugins]]
+repo = 'heavenshell/vim-pydocstring'
+
