@@ -33,3 +33,7 @@
 [credentinal]
     helper = osxkeychain
 
+[https]
+	proxy = http://kikuchi-hiroaki%40dmm.com:ev6iAmeB@219.127.218.62:6340
+[http]
+	proxy = http://kikuchi-hiroaki%40dmm.com:ev6iAmeB@219.127.218.62:6340
