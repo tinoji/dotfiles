@@ -86,3 +86,6 @@ autocmd FileType go nmap <Leader>ga <Plug>(go-alternate-edit)
 autocmd FileType go nmap <Leader>gah <Plug>(go-alternate-split)
 autocmd FileType go nmap <Leader>gav <Plug>(go-alternate-vertical)
 
+" coc.nvim
+nmap <leader>rn <Plug>(coc-rename)
+
