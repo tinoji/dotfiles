@@ -30,3 +30,10 @@ endfunction
 " See: lightline
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Remap keys
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
