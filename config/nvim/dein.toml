@@ -214,4 +214,7 @@ repo = 'davidhalter/jedi-vim'
 
 [[plugins]]
 repo = 'heavenshell/vim-pydocstring'
+hook_add = ''' "{{{
+    let g:pydocstring_templates_dir = '~/.config/nvim/pydocstring_templates'
+''' #}}}
 
