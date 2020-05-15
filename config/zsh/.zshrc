@@ -90,6 +90,4 @@ RPROMPT='`rprompt-git-current-branch`'
 eval "$(pyenv init -)"
 
 # kubectl completion
-echo "if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi" >> ~/.zshrc
-
-if [ /Users/kikuchi-hiroaki/google-cloud-sdk/bin/kubectl ]; then source <(kubectl completion zsh); fi
+if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
