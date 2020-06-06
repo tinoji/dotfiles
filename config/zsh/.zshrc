@@ -90,3 +90,5 @@ function rprompt-git-current-branch {
 
 RPROMPT='`rprompt-git-current-branch`'
 
+# kubectl completion
+if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
