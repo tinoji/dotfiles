@@ -55,21 +55,21 @@ hook_add = ''' "{{{
     set list listchars=tab:\¦\
 ''' #}}}
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = ''' "{{{
-    let g:deoplete#enable_at_startup = 1
-    let g:deoplete#auto_complete_start_length = 1
-    autocmd ColorScheme * highlight Pmenu ctermbg=245 ctermfg=235
-    autocmd ColorScheme * highlight PmenuSel ctermbg=237 ctermfg=245
-
-    call deoplete#custom#option({
-        \ 'auto_complete_delay': 200,
-        \ 'smart_case': v:true,
-        \ })
-
-    autocmd FileType go call deoplete#custom#buffer_option('auto_complete', v:false)
-''' #}}}
+# [[plugins]]
+# repo = 'Shougo/deoplete.nvim'
+# hook_add = ''' "{{{
+#     let g:deoplete#enable_at_startup = 1
+#     autocmd ColorScheme * highlight Pmenu ctermbg=245 ctermfg=235
+#     autocmd ColorScheme * highlight PmenuSel ctermbg=237 ctermfg=245
+#
+#     call deoplete#custom#option({
+#         \ 'auto_complete_delay': 200,
+#         \ 'smart_case': v:true,
+#         \ 'auto_complete_start_length': 1,
+#         \ })
+#
+#     autocmd FileType go call deoplete#custom#buffer_option('auto_complete', v:false)
+# ''' #}}}
 
 [[plugins]]
 repo = 'kana/vim-submode'
@@ -209,12 +209,14 @@ repo = 'juliosueiras/vim-terraform-completion'
 [[plugins]]
 repo = 'Glench/Vim-Jinja2-Syntax'
 
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
+# [[plugins]]
+# repo = 'davidhalter/jedi-vim'
 
 [[plugins]]
 repo = 'heavenshell/vim-pydocstring'
 hook_add = ''' "{{{
-    let g:pydocstring_templates_dir = '~/.config/nvim/pydocstring_templates'
+    let g:pydocstring_formatter = 'numpy'
+    " let g:pydocstring_templates_dir = '~/.config/nvim/pydocstring_templates'
+    let g:pydocstring_doq_path = $PYENV_ROOT.'/shims/doq'
 ''' #}}}
 
