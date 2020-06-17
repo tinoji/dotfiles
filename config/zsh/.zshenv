@@ -41,10 +41,6 @@ export GO111MODULE=on
 # python
 export PATH=$PATH:$HOME/.local/bin
 
-# prompt
-export PROMPT='%F{cyan}[%d]
-$%f '
-
 # Android
 export PATH=/usr/local/bin/platform-tools/:$PATH
 

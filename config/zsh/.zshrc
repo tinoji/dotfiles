@@ -1,3 +1,7 @@
+# prompt
+export PROMPT='%F{cyan}[%d]
+$%f '
+
 # load .zsh dir
 for i in ~/.zsh/*.zsh; do
   source $i
@@ -85,9 +89,6 @@ function rprompt-git-current-branch {
 }
 
 RPROMPT='`rprompt-git-current-branch`'
-
-# pyenv
-eval "$(pyenv init -)"
 
 # kubectl completion
 if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
