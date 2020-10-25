@@ -127,6 +127,9 @@ hook_add = ''' "{{{
     let g:ale_linters = {'go': []}
 ''' #}}}
 
+[[plugins]]
+repo = 'rhysd/conflict-marker.vim'
+
 
 #################
 # For languages
