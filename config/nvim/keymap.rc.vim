@@ -17,7 +17,6 @@ inoremap <C-j> <Down>
 inoremap <C-l> <Right>
 inoremap <C-h> <Left>
 
-
 " lower/upper
 xnoremap u <nop>
 xnoremap U <nop>
@@ -50,8 +49,8 @@ nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
-nnoremap sn gt
-nnoremap sp gT
+nnoremap fl gt
+nnoremap fh gT
 nnoremap sr <C-w>r
 nnoremap s= <C-w>=
 nnoremap sw <C-w>w
