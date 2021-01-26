@@ -53,12 +53,6 @@ def alacritty():
     print('<<< [ok] alacritty')
 
 
-def git():
-    print('>>> git')
-    os.system('ln -sf  ~/dotfiles/config/git/.gitconfig ~/.gitconfig')
-    print('<<< [ok] git')
-
-
 def karabiner():
     print('>>> karabiner')
     os.system('ln -sf  ~/dotfiles/config/karabiner/mac_karabiner.json ~/.config/karabiner/karabiner.json')
