@@ -2,6 +2,11 @@
 export PROMPT='%F{cyan}[%d]
 $%f '
 
+# history
+export HISTFILE=~/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=100000
+
 # load .zsh dir
 for i in ~/.zsh/*.zsh; do
   source $i
@@ -90,7 +95,12 @@ function rprompt-git-current-branch {
 
 RPROMPT='`rprompt-git-current-branch`'
 
-# kubectl completion
+# kubernetes
 if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
+if [ -f "/usr/local/opt/kube-ps1/share/kube-ps1.sh" ]; then
+    source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+    PROMPT='$(kube_ps1)'$PROMPT
+fi
 
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
