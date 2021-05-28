@@ -27,11 +27,6 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 
-# history
-export HISTFILE=~/.zsh_history
-export HISTSIZE=1000000
-export SAVEHIST=1000000
-
 # golang
 export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
