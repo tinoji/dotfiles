@@ -42,3 +42,5 @@ export PATH=/usr/local/bin/platform-tools/:$PATH
 # color
 source "`brew --prefix`/etc/grc.bashrc"
 
+# krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
