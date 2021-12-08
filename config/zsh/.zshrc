@@ -12,6 +12,9 @@ for i in ~/.zsh/*.zsh; do
   source $i
 done
 
+# key timeout (vimのESCが遅い対策)
+KEYTIMEOUT=1
+
 # tmux
 # From: https://github.com/b4b4r07/dotfiles
 function is_exists() { type "$1" >/dev/null 2>&1; return $?; }
