@@ -35,12 +35,19 @@ export GO111MODULE=on
 
 # python
 export PATH=$PATH:$HOME/.local/bin
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # Android
 export PATH=/usr/local/bin/platform-tools/:$PATH
 
 # color
-source "`brew --prefix`/etc/grc.bashrc"
+[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 
 # krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# node
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH="/Users/tinoji/.ebcli-virtual-env/executables:$PATH"
