@@ -62,8 +62,6 @@ cask "hammerspoon"
 # ---- VS Code 拡張 ----
 vscode "anthropic.claude-code"
 vscode "bibhasdn.unique-lines"
-vscode "github.copilot"
-vscode "github.copilot-chat"
 vscode "idleberg.applescript"
 vscode "idleberg.jxa"
 vscode "janisdd.vscode-edit-csv"
