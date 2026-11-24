@@ -1,3 +1,0 @@
-setopt share_history
-setopt prompt_subst
-setopt HIST_IGNORE_SPACE

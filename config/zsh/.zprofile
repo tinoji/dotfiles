@@ -13,5 +13,9 @@ path=(
 # uv や Claude Code の CLI は ~/.local/bin に入る
 . "$HOME/.local/bin/env"
 
+# ログイン後に SSH 鍵を macOS のキーチェーンから ssh-agent へ読み込む
+# （git のコミット署名は ssh-agent の鍵を使うため。再起動後に署名が止まるのを防ぐ）
+/usr/bin/ssh-add --apple-load-keychain -q 2>/dev/null
+
 # 重複を除く
 typeset -gU path

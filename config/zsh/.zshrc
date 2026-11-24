@@ -1,5 +1,14 @@
 # 対話シェルの設定
 
+# ---- PATH の補正 ----
+# ログインシェルを経由せずに起動された場合（アプリが古い PATH を引き継いだときなど）でも、
+# /opt/homebrew を先頭にし、廃止したバージョン管理ツールのパスを取り除く
+typeset -gU path
+path=(${path:#*/.nvm/*})
+path=(${path:#*/.volta/*})
+path=(${path:#*/.pyenv/*})
+path=(/opt/homebrew/bin /opt/homebrew/sbin $HOME/.local/bin $path)
+
 # ---- history ----
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
