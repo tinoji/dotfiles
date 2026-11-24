@@ -1,0 +1,23 @@
+{
+    // 見た目
+    "workbench.colorTheme": "Dark+",
+    "window.zoomLevel": 1,
+    "editor.renderWhitespace": "boundary",
+
+    // 保存時の整形（旧 neovim の trailing-whitespace 相当）
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+
+    // エディタ
+    "editor.multiCursorLimit": 50000,
+
+    // Python（Pylance の型チェック）
+    "python.analysis.typeCheckingMode": "standard",
+
+    // ターミナル（ログインシェルの zsh を使う）
+    "terminal.integrated.defaultProfile.osx": "zsh",
+
+    // 既存の設定を引き継ぐ
+    "security.workspace.trust.untrustedFiles": "open",
+    "github.copilot.nextEditSuggestions.enabled": true
+}

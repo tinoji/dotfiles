@@ -1,109 +1,45 @@
-# prompt
-export PROMPT='%F{cyan}[%d]
-$%f '
+# 対話シェルの設定
 
-# history
-export HISTFILE=~/.zsh_history
-export HISTSIZE=10000
-export SAVEHIST=100000
+# ---- history ----
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=100000
+setopt share_history hist_ignore_space hist_ignore_all_dups hist_reduce_blanks
+setopt prompt_subst
+KEYTIMEOUT=1  # vim の ESC が遅い対策
 
-# load .zsh dir
-for i in ~/.zsh/*.zsh; do
-  source $i
-done
+# ---- completion ----
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+autoload -Uz compinit && compinit -u
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' list-colors 'di=33' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
-# key timeout (vimのESCが遅い対策)
-KEYTIMEOUT=1
+# ---- keybind ----
+bindkey -e
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
 
-# tmux
-# From: https://github.com/b4b4r07/dotfiles
-function is_exists() { type "$1" >/dev/null 2>&1; return $?; }
-function is_osx() { [[ $OSTYPE == darwin* ]]; }
-function is_screen_running() { [ ! -z "$STY" ]; }
-function is_tmux_runnning() { [ ! -z "$TMUX" ]; }
-function is_screen_or_tmux_running() { is_screen_running || is_tmux_runnning; }
-function shell_has_started_interactively() { [ ! -z "$PS1" ]; }
-function is_ssh_running() { [ ! -z "$SSH_CONECTION" ]; }
+# ---- tools ----
+eval "$(mise activate zsh)"        # Node / Terraform などのバージョン切り替え
+eval "$(starship init zsh)"        # プロンプト（git の状態表示も担う）
+eval "$(zoxide init zsh)"          # z <dir> で移動
+source <(fzf --zsh)                # Ctrl-R: 履歴検索 / Ctrl-T: ファイル選択
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-function tmux_automatically_attach_session()
-{
-    if is_screen_or_tmux_running; then
-        ! is_exists 'tmux' && return 1
+# ---- alias ----
+alias u='cd ..'
+alias ls='eza'
+alias ll='eza -lah --git'
+alias tree='eza --tree'
+alias grep='grep --color=auto'
+alias sed='gsed'
+alias df='df -h'
+alias rm='/opt/homebrew/opt/trash/bin/trash -F'  # ゴミ箱へ移す
+alias k='kubectl'
 
-        if is_tmux_runnning; then
-            echo "\n${fg_bold[grey]} _(:3」∠)_  Welcome to tmux  _(┐「ε:)_${reset_color}\n"
-        elif is_screen_running; then
-            echo "This is on screen."
-        fi
-    else
-        if shell_has_started_interactively && ! is_ssh_running; then
-            if ! is_exists 'tmux'; then
-                echo 'Error: tmux command not found' 2>&1
-                return 1
-            fi
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/tinoji/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
-            if tmux has-session >/dev/null 2>&1 && tmux list-sessions | grep -qE '.*]$'; then
-                # detached session exists
-                tmux list-sessions
-                echo -n "Tmux: attach? (y/N/num) "
-                read
-                if [[ "$REPLY" =~ ^[Yy]$ ]] || [[ "$REPLY" == '' ]]; then
-                    tmux attach-session
-                    if [ $? -eq 0 ]; then
-                        echo "$(tmux -V) attached session"
-                        return 0
-                    fi
-                elif [[ "$REPLY" =~ ^[0-9]+$ ]]; then
-                    tmux attach -t "$REPLY"
-                    if [ $? -eq 0 ]; then
-                        echo "$(tmux -V) attached session"
-                        return 0
-                    fi
-                fi
-            fi
-            tmux new-session && echo "tmux created new session"
-        fi
-    fi
-}
-tmux_automatically_attach_session
-
-# coloring of git branch status
-function rprompt-git-current-branch {
-  local branch_name st branch_status
-
-  if [ ! -e  ".git" ]; then
-    # not git dir
-    return
-  fi
-  branch_name=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
-  st=`git status 2> /dev/null`
-  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
-    branch_status="%F{green}"
-  elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
-    branch_status="%F{red}?"
-  elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
-    branch_status="%F{red}+"
-  elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
-    branch_status="%F{yellow}!"
-  elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
-    echo "%F{red}!(no branch)"
-    return
-  else
-    # the other cases
-    branch_status="%F{blue}"
-  fi
-  # show branch name
-  echo "${branch_status}[$branch_name]"
-}
-
-RPROMPT='`rprompt-git-current-branch`'
-
-# kubernetes
-if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
-if [ -f "/usr/local/opt/kube-ps1/share/kube-ps1.sh" ]; then
-    source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-    PROMPT='$(kube_ps1)'$PROMPT
-fi
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# syntax highlighting は最後に読み込む必要がある
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
